@@ -1,9 +1,3 @@
-/* 
- * O trabalho consiste em um banco de dados dedutivo
- * para árvore genealogica dos personagens de House of
- * Dragons e Game of Thrones
- */
-
 
 /*  fatos  */
     /* house  (9 houses) */
