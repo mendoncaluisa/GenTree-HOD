@@ -12,9 +12,17 @@ sister(Sibilings, Sibilings2):- parents(Fathers, Sibilings), parents(Fathers, Si
 
 /*      TIOS        */
 /*     aunt     Nephew      */
-tia(Aunt, Nephew):- parents(X, Nephew), Sister(X, Aunt).
+tia(Aunt, Nephew):- father(X, Nephew); mother(X, Nephew), sister(X, Aunt).
 /*  Uncle  Nephew           */
-tio(Uncle, Nephew):- parents(X, Nephew), Brother(X, Uncle).
+tio(Uncle, Nephew):- father(X, Nephew); mother(X, Nephew),, brother(X, Uncle).
 
-/*      AVÓS        */
-grandparents(Grandparents, Grandson):- parents(Grandparents, Son), parents(Son, Grandson).
+/*      GRANDPARENTS        */
+/*      GRANDMOTHER -> MOTHER        */
+grandparents(Grandparents, Grandson):- mother(Grandparents, Son), mother(Son, Grandson).
+/*      GRANDFATHER -> MOTHER        */
+grandparents(Grandparents, Grandson):- father(Grandparents, Son), mother(Son, Grandson).
+
+/*      GRANDMOTHER -> FATHER        */
+grandparents(Grandparents, Grandson):- mother(Grandparents, Son), father(Son, Grandson).
+/*      GRANDFATHER -> FATHER        */
+grandparents(Grandparents, Grandson):- father(Grandparents, Son), father(Son, Grandson).
