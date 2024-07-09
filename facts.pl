@@ -244,6 +244,8 @@
     title(otto, kingsHand, kingsHandViserysI).
     title(otto, kingsHand, kingsHandAegonII).
     title(criston, kingsHand, kingsHandAegonII).
+
+    title(daemon, king)
     
 
 /* DRAGONS */

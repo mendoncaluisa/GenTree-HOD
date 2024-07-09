@@ -1,5 +1,20 @@
-pai(Pai, Filho):- parents(Pai, Filho), male(Pai).
-mae(Mae, Filho):- parents(Mae, Filho), female(Mae).
-irmao(Irmao1, Irmao2):- parents(Pais, Irmao1), parents(Pais, Irmao2), Irmao1 \= Irmao2.
-tio(Tio, Sobrinho):- parents(X, Sobrinho), irmao(Tio, X).
-avo(Avo, Neto):- parents(Avo, Filho), parents(Filho, Neto).
+/*      PAIS        */
+/*      PAI         */
+father(Father, Son):- parents(Father, Son), male(Father).
+/*      MÃE         */
+mae(Mae, Son):- parents(Mae, Son), female(Mae).
+
+/*      IRMÃOS          */
+/*     Any    male     */
+brother(Sibilings, Brother):- parents(Fathers, Sibilings), parents(Fathers, Brother), male(Brother), Sibilings \= Brother.
+/*     Any    female     */
+sister(Sibilings, Sibilings2):- parents(Fathers, Sibilings), parents(Fathers, Sister), female(Sister), Sibilings \= Sister.
+
+/*      TIOS        */
+/*     aunt     Nephew      */
+tia(Aunt, Nephew):- parents(X, Nephew), Sister(X, Aunt).
+/*  Uncle  Nephew           */
+tio(Uncle, Nephew):- parents(X, Nephew), Brother(X, Uncle).
+
+/*      AVÓS        */
+grandparents(Grandparents, Grandson):- parents(Grandparents, Son), parents(Son, Grandson).
