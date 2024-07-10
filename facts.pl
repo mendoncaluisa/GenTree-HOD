@@ -2,136 +2,152 @@
 /*  fatos  */
     /* house  (9 houses) */
 
-    house(targaryen).
-    house(velaryon).
-    house(arryn).
-    house(stark).
-    house(tully).
-    house(greyjoy).
-    house(baratheon).
-    house(lannister).
-    house(hightower).
-    house(redwyne).
-    house(strong).
-    house(royce).
+    house('Targaryen').
+    house('Velaryon').
+    house('Arryn').
+    house('Stark').
+    house('Tully').
+    house('Greyjoy').
+    house('Baratheon').
+    house('Lannister').
+    house('Hightower').
+    house('Redwyne').
+    house('Strong').
+    house('Royce').
 
 /* GENDER */
     /* female (7 female)*/
-    female(rhaenyra).
-    female(rhaenys).
-    female(rhaena).
-    female(baela).
-    female(alicent).
-    female(helaena).
-    female(mysaria).
-    female(laena).
-    female(jaehaera).
-    female(alysanne).
-    female(visenya).
-    female(alyssa).
-    female(jocelyn).
-    female(aemma).
-    female(vissenya).
-    female(rhea).
+    female('Rhaenyra').
+    female('Rhaenys').
+    female('Rhaena').
+    female('Baela').
+    female('Alicent').
+    female('Helaena').
+    female('Mysaria').
+    female('Laena').
+    female('Jaehaera').
+    female('Alysanne').
+    female('Visenya').
+    female('Alyssa').
+    female('Jocelyn').
+    female('Aemma').
+    female('Vissenya').
+    female('Rhea').
 
     /* HOMENS (19 homens)*/
-    male(aemon).
-    male(aegonI).
-    male(aegonII).
-    male(aegonIII).
-    male(aemond).
-    male(lucerys).
-    male(laenor).
-    male(jacaeres).
-    male(jason).
-    male(tyland).
-    male(larys).
-    male(vaemond).
-    male(harwin).
-    male(lyonel).
-    male(lyman).
-    male(criston).
-    male(harrold).
-    male(corlys).
-    male(otto).
-    male(daemon).
-    male(viserysI).
-    male(viserysII).
-    male(joffrey).
-    male(jaehaerysI).
-    male(jaehaerysII).
-    male(baelonI).
-    male(baelonII).
-    male(daeron).
-    male(arryk).
-    male(erryk).
-    male(lorent).
-    male(ryam).
-    male(steffon).
-    male(mellos).
-    male(orwyle).
-    male(jasper).
-    male(lyman).
+    male('Aemon').
+    male('AegonI').
+    male('AegonII').
+    male('AegonIII').
+    male('Aemond').
+    male('Lucerys').
+    male('Laenor').
+    male('Jacaeres').
+    male('Jason').
+    male('Tyland').
+    male('Larys').
+    male('Vaemond').
+    male('Harwin').
+    male('Lyonel').
+    male('Lyman').
+    male('Criston').
+    male('Harrold').
+    male('Corlys').
+    male('Otto').
+    male('Daemon').
+    male('ViserysI').
+    male('ViserysII').
+    male('Joffrey').
+    male('JaehaerysI').
+    male('BaehaerysII').
+    male('BaelonI').
+    male('BaelonII').
+    male('Daeron').
+    male('Arryk').
+    male('Erryk').
+    male('Lorent').
+    male('Ryam').
+    male('Steffon').
+    male('Mellos').
+    male('Orwyle').
+    male('Jasper').
+    male('Lyman').
 
 
 /* family */
 /*            NOME      family   */
-    family(visenya, targaryen).
-    family(rhaenyra, targaryen).
-    family(rhaenys, targaryen).
-    family(rhaena, targaryen).
-    family(baela, targaryen).
-    family(helaena, targaryen).
-    family(viserysI, targaryen).
-    family(aegonI, targaryen).
-    family(aegonII, targaryen).
-    family(aegonIII, targaryen).
-    family(aemond, targaryen).
-    family(viserysII, targaryen).
-    family(jaehaerysI, targaryen).
-    family(jaehaerysII, targaryen).
-    family(jaehaera, targaryen).
-    family(alysanne, targaryen).
-    family(aemon, targaryen).
-    family(baelonI, targaryen).
-    family(alyssa, targaryen).
-    family(baelonII, targaryen).
-    family(daeron, targaryen).
-    family(visenya, targaryen).
-
-    family(alicent, hightower).
-    family(otto, hightower).
     
-    family(laena, velaryon).
-    family(laenor, velaryon).
-    family(lucerys, velaryon).
-    family(jacaeres, velaryon).
-    family(vaemond, velaryon).
-    family(corlys, velaryon).
-    family(joffrey, velaryon).
-    
-    family(jason, lannister).
-    family(tyland, lannister).
+family('Visenya', 'Targaryen').
+family('Rhaenyra', 'Targaryen').
+family('Rhaenys', 'Targaryen').
+family('Rhaena', 'Targaryen').
+family('Baela', 'Targaryen').
+family('Helaena', 'Targaryen').
+family('Viserys I', 'Targaryen').
+family('Aegon I', 'Targaryen').
+family('Aegon II', 'Targaryen').
+family('Aegon III', 'Targaryen').
+family('Aemond', 'Targaryen').
+family('Viserys II', 'Targaryen').
+family('Jaehaerys I', 'Targaryen').
+family('Jaehaerys II', 'Targaryen').
+family('Jaehaera', 'Targaryen').
+family('Alysanne', 'Targaryen').
+family('Aemon', 'Targaryen').
+family('Baelon I', 'Targaryen').
+family('Alyssa', 'Targaryen').
+family('Baelon II', 'Targaryen').
+family('Daeron', 'Targaryen').
+family('Visenya', 'Targaryen'). % Duplicated entry removed
 
-    family(jocelyn, baratheon).
+family('Alicent', 'Hightower').
+family('Otto', 'Hightower').
 
-    family(aemma, arryn).
+family('Laena', 'Velaryon').
+family('Laenor', 'Velaryon').
+family('Lucerys', 'Velaryon').
+family('Jacaerys', 'Velaryon').
+family('Vaemond', 'Velaryon').
+family('Corlys', 'Velaryon').
+family('Joffrey', 'Velaryon').
 
-    family(lyonel, strong).
-    family(harwin, strong).
-    family(larys, strong).
+family('Jason', 'Lannister').
+family('Tyland', 'Lannister').
 
-    family(rhea, royce).
+family('Jocelyn', 'Baratheon').
+
+family('Aemma', 'Arryn').
+
+family('Lyonel', 'Strong').
+family('Harwin', 'Strong').
+family('Larys', 'Strong').
+
+family('Rhea', 'Royce').
+
+
+first_born('Jaehaerys I', 'Aemon').
+first_born('Viserys I', 'Rhaenyra').
+first_born('Aegon II', 'Jaehaera').
+first_born('Daeron I', 'Baelor').
+first_born('Aegon III', 'Daeron').
+first_born('Baelor I', 'Viserys').
+first_born('Viserys II', 'Aegon').
+first_born('Aegon IV', 'Daeron II').
+
+
+primogenito_do_rei(Rei, Primogenito) :-
+    first_born(Rei, Primogenito).
+
 
 /* ninckname */
     /*       Name       ninckname       */
-    ninckname(rhaenys, theQueenWhoNeverWas).
-    ninckname(jason, breakbones).
-    ninckname(lucerys, luke).
+    ninckname(rhaenys, The Queen Who Never Was).
+    ninckname(jason, Breakbones).
+    ninckname(lucerys, Luke).
     ninckname(jacaeres, jace).
-    ninckname(corlys, theSeaSnake).
-    ninckname(aegonI, theConqueror).
-    ninckname(aegonIII, theYounger).
+    ninckname(corlys, The Sea Snake).
+    ninckname(aegonI, The Conqueror).
+    ninckname(aegonIII, The Younger).
     ninckname(jasper, ironrod)
 
 /* parents */
@@ -244,8 +260,6 @@
     title(otto, kingsHand, kingsHandViserysI).
     title(otto, kingsHand, kingsHandAegonII).
     title(criston, kingsHand, kingsHandAegonII).
-
-    title(daemon, king)
     
 
 /* DRAGONS */
@@ -283,4 +297,15 @@
     rider(visenya, vhagar).
     rider(laena, vhagar).
     rider(aemond, vhagar).
+
+/* FIRST-BORN */
+    /*     KING      FIRST-BORN*/
+    first_born('Jaehaerys I', 'Aemond').
+    first_born('Viserys I', 'Rhaenyra').
+    first_born('Aegon II', 'Jaehaera').
+    first_born('Daeron I', 'Baelor').
+    first_born('Aegon III', 'Daeron').
+    first_born('Baelor I', 'Viserys').
+    first_born('Viserys II', 'Aegon').
+    first_born('Aegon IV', 'Daeron II').
 

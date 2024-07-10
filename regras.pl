@@ -26,3 +26,11 @@ grandparents(Grandparents, Grandson):- father(Grandparents, Son), mother(Son, Gr
 grandparents(Grandparents, Grandson):- mother(Grandparents, Son), father(Son, Grandson).
 /*      GRANDFATHER -> FATHER        */
 grandparents(Grandparents, Grandson):- father(Grandparents, Son), father(Son, Grandson).
+
+/*      REGRAS COM CORTES           */
+succession(Parents, Son):- father(Parents, Son); mother(Parents,Son), royalTitle(father, king)
+
+/* FIRST-BORN */
+/*  KING -> FIRST-BRON*/
+king-first-born(King, first-born) :-
+    first_born(King, first-born).
