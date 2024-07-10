@@ -34,7 +34,7 @@
     female(vissenya).
     female(rhea).
 
-    /* HOMENS (19 homens)*/
+    /* HOMENS ( homens)*/
     male(aemon).
     male(aegonI).
     male(aegonII).
@@ -135,7 +135,7 @@
     ninckname(jasper, ironrod)
 
 /* parents */
-    /*      PAI      FILHO  */
+    /*       PAI      FILHO  */
     parents(viserysI, rhaenyra).
     parents(viserysI, aegonII).
     parents(viserysI, aemond).
@@ -225,7 +225,7 @@
 
 
 /* TITLE */
-    /*      NAME         TITLE     SUB*/
+    /*      NAME      TITLE     SUB*/
     title(arryk, kingsguard, swordsmen).
     title(erryk, kingsguard, swordsmen).
     title(criston, kingsguard, commander).
@@ -282,3 +282,22 @@
     rider(laena, vhagar).
     rider(aemond, vhagar).
 
+/*   SIDES OF A WAR   */
+/*  Verdes  */
+    greens(targaryen).
+    greens(hightower).
+    greens(baratheon).
+    greens(lannister).
+    greens(redwyne).
+
+    black(arryn).
+    black(tully).
+    black(stark).
+    black(greyjoy).
+    black(velaryon).
+    black(targaryen).
+
+/*  REGIAO */
+
+    
+/**/
