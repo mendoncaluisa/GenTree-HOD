@@ -1,3 +1,4 @@
+/* FACTS */
 /*FACTS*/
 
 /* DRAGONS FOR BATTLE*/
@@ -34,3 +35,68 @@ specialAttack(Dragon, Burst) :-
     Burst is Strength * Speed.
 
 
+
+/* RIDERS AND THEIR DRAGONS */
+rider(lucerys, arrax).
+rider(viserysI, balerion).
+rider(aegonI, balerion).
+rider(daemon, caraxes).
+rider(helaena, dreamfyre).
+rider(rhaenys, meleys).
+rider(baela, moondancer).
+rider(laenor, seasmoke).
+rider(alysanne, silverwing).
+rider(aegonII, sunfyre).
+rider(rhaenyra, syrax).
+rider(joffrey, tyraxes).
+rider(jacaeres, vermax).
+rider(jaehaerysI, vermithor).
+rider(visenya, vhagar).
+rider(laena, vhagar).
+rider(aemond, vhagar).
+
+/* RIDERS STATUS */
+% rider(Name, [Intelligence, Strategy])
+rider_status(lucerys, [70, 75]).
+rider_status(viserysI, [85, 80]).
+rider_status(aegonI, [90, 85]).
+rider_status(daemon, [80, 90]).
+rider_status(helaena, [75, 70]).
+rider_status(rhaenys, [85, 85]).
+rider_status(baela, [70, 75]).
+rider_status(laenor, [75, 80]).
+rider_status(alysanne, [80, 85]).
+rider_status(aegonII, [70, 80]).
+rider_status(rhaenyra, [85, 90]).
+rider_status(joffrey, [65, 70]).
+rider_status(jacaeres, [75, 75]).
+rider_status(jaehaerysI, [90, 90]).
+rider_status(visenya, [85, 85]).
+rider_status(laena, [80, 80]).
+rider_status(aemond, [75, 85]).
+
+/* RULES */
+
+% combined_attributes(Rider, Dragon, CombinedAttributes)
+combined_attributes(Rider, Dragon, CombinedAttributes) :-
+    rider_status(Rider, [Intelligence, Strategy]),
+    dragon(Dragon, [Strength, Speed, Endurance]),
+    CombinedIntelligence is Intelligence + Strength,
+    CombinedStrategy is Strategy + Speed,
+    CombinedEndurance is Endurance,
+    CombinedAttributes = [CombinedIntelligence, CombinedStrategy, CombinedEndurance].
+
+% final_power(Rider, Dragon, FinalPower)
+final_power(Rider, Dragon, FinalPower) :-
+    rider(Rider, Dragon),  % Verifica se o cavaleiro e o dragão estão associados
+    combined_attributes(Rider, Dragon, CombinedAttributes),
+    sum_list(CombinedAttributes, Total),
+    FinalPower is Total * 2,
+    !. 
+
+final_power(Rider, Dragon, Total) :-
+    \+ rider(Rider, Dragon),  % Verifica se o cavaleiro não está associado ao dragão
+    combined_attributes(Rider, Dragon, CombinedAttributes),
+    sum_list(CombinedAttributes, Total).
+
+% Exemplo de consulta: final_power(lucerys, arrax, Result).
