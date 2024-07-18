@@ -10,7 +10,41 @@ BACKGROUND_THEME = 'https://images.wallpapersden.com/image/download/house-of-dra
 BACKGROUND = 'https://pbs.twimg.com/media/Ff2n8KhXgAAXgny?format=jpg&name=large'
 # PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 
-content = ([])
+# content = ([])
+content = html.Div([
+        html.Div([
+            html.Ul([
+                html.Li([
+                    html.A("Parent"),
+                    html.Ul([
+                        html.Li([
+                            html.A("Child"),
+                            html.Ul([
+                                html.Li([
+                                    html.A("Grand Child")
+                                ])
+                            ])
+                        ]),
+                        html.Li([
+                            html.A("Child"),
+                            html.Ul([
+                                html.Li(html.A("Grand Child")),
+                                html.Li([
+                                    html.A("Grand Child"),
+                                    html.Ul([
+                                        html.Li(html.A("Great Grand Child")),
+                                        html.Li(html.A("Great Grand Child")),
+                                        html.Li(html.A("Great Grand Child"))
+                                    ])
+                                ]),
+                                html.Li(html.A("Grand Child"))
+                            ])
+                        ])
+                    ])
+                ])
+            ])
+        ], className="tree")
+    ], className="container")
 search_page = lay.search()
 layou_nav= lay.navbar(search_page)
 content=lay.content_page(content)
