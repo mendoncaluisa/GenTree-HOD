@@ -10,3 +10,6 @@ def register_callbacks(app):
     def update_home_output(n_clicks):
         data = data_model.get_home_data()
         return f'Clique no botão: {n_clicks} Vezes. Data: {data}'
+
+    def teste():
+        return 'oi'

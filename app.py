@@ -4,46 +4,26 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 from View import home_view
 from Controller import home_controller
+from Controller.controller import Controller
 
-app = dash.Dash(__name__, suppress_callback_exceptions=True,external_stylesheets=[dbc.themes.BOOTSTRAP],url_base_pathname='/', assets_folder='./View/assets')
-
-
-app.layout = html.Div([
-    dcc.Location(id='url', refresh=False),
-    html.Div(id='page-content')
-])
-
-
+app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP], url_base_pathname='/', assets_folder='./View/assets')
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
 
-# Roteamento de páginas
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == '/':
-        # return page1_view.layout()
-        return home_view.layout()
-    # if pathname == '/page1':
-    #     # return page1_view.layout()
-    #     return home_view.layout()
-    # elif pathname == '/page2':
-    #     # return page2_view.layout()
-    #     return home_view.layout()
-    # else:
-    #     return home_view.layout()
+        controller = Controller()
+        data = controller.genTree()
+        return home_view.layout(data)
+    else:
+        return '404'
 
-# Callbacks da página inicial
 home_controller.register_callbacks(app)
-
-# Callbacks da página 1
-# page1_controller.register_callbacks(app)
-
-# Callbacks da página 2
-# page2_controller.register_callbacks(app)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
