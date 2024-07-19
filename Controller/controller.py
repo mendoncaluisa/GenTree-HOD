@@ -3,8 +3,11 @@ from collections import defaultdict
 class Controller:
     def __init__(self) -> None:
         self.example_struct = {
-            'Laenor Velaryon & Rhaenyra Targaryen': {'Joffrey': None, 'Jacaerys': None, 'Lucerys': None},
-            'Rhaenyra Targaryen & Daemon Targaryen': {'Joffrey': None, 'Jacaerys': None, 'Lucerys': None, 'Aegon III': {'Daeron I': None, 'Baelor': None, 'Daena': None, 'Rhaena': None, 'Elaena': None}, 'Viserys II': None},
+            'Laenor Velaryon & Rhaenyra Targaryen': {'Joffrey Targaryen': None, 'Jacaerys Targaryen': None, 'Lucerys Targaryen': None},
+            'Rhaenyra Targaryen & Daemon Targaryen': { 
+                                                      'Aegon III Targaryen & Daenaera Velaryon' : {'Daeron I Targaryen': None, 'Baelor Targaryen': None, 'Daena Targaryen': None, 'Rhaena Targaryen': None, 'Elaena Targaryen': None}, 
+                                                      'Viserys II Targaryen & Larra Rogare': None
+                                                      }
         }
 
     def _merge_children(self, tree):
