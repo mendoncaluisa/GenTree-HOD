@@ -2,7 +2,7 @@
 * {margin: 0; padding: 0;}
 
 body {
-    background: url('https://images.wallpapersden.com/image/download/house-of-dragon-dragonstone_bWxpbmaUmZqaraWkpJRobWllrWZuZmg.jpg') no-repeat center center fixed;
+    background: url('https://pbs.twimg.com/media/Ff2n8KhXgAAXgny?format=jpg&name=large'); 
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     width: 100%;
+    
 }
 
 .tree ul {
@@ -21,6 +22,7 @@ body {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
+    color:black;
 }
 
 .tree li {
@@ -32,6 +34,7 @@ body {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
+    color:white;
 }
 
 /*We will use ::before and ::after to draw the connectors*/
@@ -124,5 +127,18 @@ right connector from last child*/
     border-color:  #94a0b4;
 }
 
-/*Thats all. I hope you enjoyed it.
-Thanks :)*/
+/*Toggle content styles*/
+.toggle-hidden {
+    display: none;
+}
+
+.toggle-visible {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+}

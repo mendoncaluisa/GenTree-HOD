@@ -1,12 +1,9 @@
 import dash_bootstrap_components as dbc
-from dash import dcc, Input, Output, State, html
-from dash_bootstrap_components._components.Container import Container
-
+from dash import dcc, html
 
 PLOTLY_LOGO = "https://styles.redditmedia.com/t5_2vf7y/styles/communityIcon_9nbs2ss10b111.png"
 BACKGROUND_THEME = 'https://images.wallpapersden.com/image/download/house-of-dragon-dragonstone_bWxpbmaUmZqaraWkpJRobWllrWZuZmg.jpg'
 BACKGROUND = 'https://pbs.twimg.com/media/Ff2n8KhXgAAXgny?format=jpg&name=large'
-# PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 
 def search():
     search_bar = dbc.Row(
@@ -34,64 +31,43 @@ def navbar(search_bar):
                             dbc.Row(
                                 [
                                     dbc.Col(html.Img(src=PLOTLY_LOGO, height="50px")),
-                                    dbc.Col(dbc.NavbarBrand("GenTree House of Dragon", className="ms-2")),
+                                    dbc.Col(dbc.NavbarBrand("GenTree House of Dragon", className="ms-2 col-12")),
                                 ],
                                 align="center",
-                                className="g-0 d-flex justify-content-center text-center",
+                                className="g-0 d-flex justify-content-center text-center col-sm-12 col-mds-12 col-xl-12",
                             ),
                             href="https://plotly.com",
                             style={"textDecoration": "none"},
-                            className="d-flex text-center col-md-9 col-lg-12 col-sm-9 justify-content-center"
                         ),
-                        dbc.NavbarToggler(id="navbar-toggler", n_clicks=0),
-                        dbc.Collapse(
-                            id="navbar-collapse",
-                            is_open=False,
-                            navbar=True,
-                            className="col-sm-2 mr-1",
-                        ),
-                    ]
+                        # dbc.NavbarToggler(id="navbar-toggler", n_clicks=0),
+                        # dbc.Collapse(
+                        #     search_bar,
+                        #     id="navbar-collapse",
+                        #     is_open=False,
+                        #     navbar=True,
+                        # ),
+                    ], className="d-flex justify-content-center text-center col-12",
                 ),
                 color="dark",
                 dark=True,
-                className="col-sm-12 col-md-12 col-lg-12",
-            )
-        ], align="center", className="bg-dark text-center text-white fs-3 mb-6"),
-        
-        dcc.Interval(id='interval-component', interval=1*1000, n_intervals=0)
+                className="d-flex justify-content-center text-center col-12"
+            ),
+        ], justify="center", align="center")
     ])
     return layout_nav
 
-def content_page(scopo):
-    return scopo
-
 def body_page(content, layout_nav):
-    body = html.Div(style={
-            "background-image": f"url('{BACKGROUND}')",
-            "background-size": "cover",
-            "background-repeat": "no-repeat",
-            "background-position": "center",
-            "height": "100vh",
-            "width": "100vw",
-            "position": "relative",
-            "opacity": "0.9"
-        }, 
-        children=[
-            html.Div(style={
-                    "position": "absolute",
-                    "top": "0",
-                    "left": "0",
-                    "right": "0",
-                    "bottom": "0",
-                    "background-color": "rgba(0, 0, 0, 0.5)",
-                    "color": "white",
-                    "padding": "2px"
-                },
-                children=[
-                    layout_nav,
-                    content,
-                ]
-            )
-        ]
-    )
-    return body
+    layout_page = html.Div([
+        dbc.Container([
+            dbc.Row([
+                dbc.Col(layout_nav, width=12)
+            ], className="d-flex justify-content-center text-center"),
+            dbc.Row([
+                dbc.Col(content, width=12)
+            ], className="d-flex justify-content-center text-center")
+        ], fluid=True)
+    ])
+    return layout_page
+
+def content_page(content):
+    return content
