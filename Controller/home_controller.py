@@ -37,23 +37,20 @@ def register_callbacks(app):
             content = html.Div([
                                 dbc.Card(
                                     [
-                                        dbc.CardImg(src=img_targaryen[selected_name], top=True),
+                                        dbc.CardImg(src=img_targaryen.get(selected_name, ''), top=True, className="img-fluid"),
                                         dbc.CardBody(
                                             [
                                                 html.H4(selected_name, className="card-title"),
-                                                html.P(selected_name,
-                                                    className="card-text",
-                                                ),
-                                                dbc.Button("Go somewhere", color="primary"),
-                                            ]
+                                                html.P(selected_name, className="card-text"),
+                                                dbc.Button("Sair", id='hide-toggle-button', color="danger"),
+                                            ],
+                                            className="d-flex flex-column align-items-center"  # Centralizar o conteúdo
                                         ),
                                     ],
-                                    style={"width": "18rem"},
-                                )
-                    # html.H2(selected_name)
-                    # Adicione mais conteúdo aqui conforme necessário
-                    ],className='toggle-content'
-                )
+                                    style={"width": "100%", "max-width": "20rem"},  # Ajuste o tamanho máximo
+                                ),
+                            ],
+                            className='toggle-content p-3 border rounded shadow-sm',  # Adicione classes para padding e borda
+                        )
             return 'toggle-visible', content
         return 'toggle-hidden', ''
-
