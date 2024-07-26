@@ -141,13 +141,13 @@ primogenito_do_rei(Rei, Primogenito) :-
 
 /* ninckname */
     /*       Name       ninckname       */
-    ninckname(rhaenys, The Queen Who Never Was).
+    ninckname(rhaenys, theQueenWhoNeverWas).
     ninckname(jason, Breakbones).
     ninckname(lucerys, Luke).
     ninckname(jacaeres, jace).
-    ninckname(corlys, The Sea Snake).
-    ninckname(aegonI, The Conqueror).
-    ninckname(aegonIII, The Younger).
+    ninckname(corlys, theSeaSnake).
+    ninckname(aegonI, theConqueror).
+    ninckname(aegonIII, theYounger).
     ninckname(jasper, ironrod)
 
 /* parents */
@@ -309,3 +309,96 @@ primogenito_do_rei(Rei, Primogenito) :-
     first_born('Viserys II', 'Aegon').
     first_born('Aegon IV', 'Daeron II').
 
+
+/*  REGIOES */
+    continent(westeros).
+    continent(essos).
+
+    region(north, cold, [stark, bolton, umber, karstark, manderly, mormont, reed]).
+    region(riverlands, temperate, [tully, blackwood, bracken, frey, mallister]).
+    region(the_reach, temperate, [tyrell, tarly, florent, hightower, redwyne]).
+    region(the_stormlands, temperate, [baratheon, caron, dondarrion, swann]).
+    region(the_westerlands, temperate, [lannister, crakehall, marbrand, reynes]).
+    region(the_crownlands, temperate, [baratheon_of_kings_landing, velaryon, staunton]).
+    region(dorne, hot, [martell, dayne, yronwood, uller]).
+    region(the_iron_islands, cold, [greyjoy, harlaw, botley, blacktyde]).
+    region(the_vale, cold, [arryn, royce, corbray, hunter]).
+    region(the_neck, swampy, [reed]).
+    region(the_kingdom_of_the_mountain_and_the_vale, cold, [arryn, royce, corbray, hunter]).
+    region(the_kingswood, temperate, []).
+    region(the_whispering_wood, temperate, []).
+    region(the_western_wastelands, cold, []).
+    region(the_shivering_sea, cold, []).
+    region(the_shadowlands, mysterious, []).
+    region(the_winterlands, cold, []).
+    region(the_frostfangs, freezing, []).
+    region(the_dreadfort, cold, [bolton]).
+    region(the_stone_shore, cold, []).
+    region(the_narrow_sea, temperate, []).
+    region(the_red_wastes, arid, []).
+    region(the_ghost_grass, mysterious, []).
+    region(the_haunted_forest, freezing, []).
+    region(the_white_waste, freezing, []).
+    region(the_summer_isles, tropical, []).
+    region(the_salt_shore, hot, []).
+    region(the_broken_arm, hot, []).
+    region(the_smiling_sea, temperate, []).
+    region(the_blazewater_bay, temperate, []).
+    region(the_bitterbridge, temperate, []).
+    region(the_blackwood, temperate, [blackwood]).
+    region(the_boneway, hot, []).
+    region(the_greenblood, hot, []).
+    region(the_sea_of_dorne, hot, []).
+    region(the_basilisk_isles, tropical, []).
+    region(the_straits_of_qarth, arid, []).
+    region(the_summer_sea, tropical, []).
+    region(the_gulf_of_grief, arid, []).
+    region(the_doom_of_valyria, mysterious, []).
+    region(the_tall_trees, tropical, []).
+    region(the_sothoryos, tropical, []).
+    region(the_isles_of_flame, mysterious, []).
+    region(the_cape_of_wrath, temperate, []).
+    region(the_red_mountains, hot, []).
+    region(the_grey_cliffs, cold, []).
+    region(the_dark_dell, temperate, []).
+    region(the_lichen_hills, temperate, []).
+    region(the_gods_eye, temperate, []).
+    region(the_kingsroad, varied, []).
+    region(the_bay_of_ice, freezing, []).
+    region(the_sand_sisters, hot, []).
+    region(the_fingers, cold, [baelish]).
+    region(the_stone_door, temperate, []).
+    region(the_claw_isle, temperate, []).
+    region(the_battle_island, temperate, []).
+    region(the_galley_grave, temperate, []).
+    region(the_jade_sea, tropical, []).
+    region(the_shadow_sea, mysterious, []).
+    region(the_land_of_always_winter, freezing, []).
+
+
+/*  REGRAS DE  REGIÃO   */
+    region_of_house(House, Region) :-
+        region(Region, Houses),
+        member(House, Houses).
+
+    same_region(House1, House2) :-
+        region(Region, Houses),
+        member(House1, Houses),
+        member(House2, Houses).
+
+    houses_in_region(Region, Houses) :-
+        region(Region, Houses).
+
+    house_exists(House) :-
+        region(_, Houses),
+        member(House, Houses).
+    
+    all_houses(Houses) :-
+        findall(House, (region(_, HousesList),
+        member(House, HousesList)), Houses).
+
+/* REALIZAR CARTAS COMO BONUS DE CLIMA */
+
+
+/* MONTADOR  E REGIAO*/
+knowledge(daemon, )

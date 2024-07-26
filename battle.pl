@@ -60,7 +60,7 @@ rider(aemond, vhagar).
 rider_status(lucerys, [70, 75]).
 rider_status(viserysI, [85, 80]).
 rider_status(aegonI, [90, 85]).
-rider_status(daemon, [80, 90]).
+rider_status(daemon, [100, 100]).
 rider_status(helaena, [75, 70]).
 rider_status(rhaenys, [85, 85]).
 rider_status(baela, [70, 75]).
@@ -100,3 +100,4 @@ final_power(Rider, Dragon, Total) :-
     sum_list(CombinedAttributes, Total).
 
 % Exemplo de consulta: final_power(lucerys, arrax, Result).
+
