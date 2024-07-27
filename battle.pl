@@ -35,26 +35,6 @@ specialAttack(Dragon, Burst) :-
     Burst is Strength * Speed.
 
 
-
-/* RIDERS AND THEIR DRAGONS */
-rider(lucerys, arrax).
-rider(viserysI, balerion).
-rider(aegonI, balerion).
-rider(daemon, caraxes).
-rider(helaena, dreamfyre).
-rider(rhaenys, meleys).
-rider(baela, moondancer).
-rider(laenor, seasmoke).
-rider(alysanne, silverwing).
-rider(aegonII, sunfyre).
-rider(rhaenyra, syrax).
-rider(joffrey, tyraxes).
-rider(jacaeres, vermax).
-rider(jaehaerysI, vermithor).
-rider(visenya, vhagar).
-rider(laena, vhagar).
-rider(aemond, vhagar).
-
 /* RIDERS STATUS */
 % rider(Name, [Intelligence, Strategy])
 rider_status(lucerys, [70, 75]).
